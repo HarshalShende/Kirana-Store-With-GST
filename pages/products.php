@@ -9,7 +9,7 @@ require_once('auth.php');
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>CURE GROCERY</title>
+        <title>Kirana Store With GST</title>
         
         <link rel="shortcut icon" href="logoc.jpg">
         <!-- Bootstrap Core CSS -->
@@ -111,12 +111,11 @@ require_once('auth.php');
                             ?>
                             <tr class="record">
                                 <td><?php echo $row['product_code']; ?></td>
-
                                 <?php
                                 echo '
-                                    <td>
-                                        <img src="data:image/png;base64,'.base64_encode($row['images'] ).'" height="50" width="50" class="img-thumnail" />
-                                    </td>
+                                <td>
+                                    <img src="productsimage/'.($row['images'] ).'" height="100" width="100"/>
+                                </td>
                                 ';
                                 ?>
                                 
