@@ -76,7 +76,7 @@ require_once('auth.php');
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="savecustomer.php" method="post" class = "form-group">
+                                    <form action="savecustomer.php" method="post" enctype="multipart/form-data" class= "form-group">
                                         <div id="ac">
                                             <span>First Name : </span><input type="text" name="fname" class = "form-control" />
                                             <span>Middle Name : </span><input type="text" name="mname" class = "form-control" />
@@ -84,7 +84,8 @@ require_once('auth.php');
                                             <span>Address : </span><input type="text" name="address" class = "form-control" />
                                             <span>Contact : </span><input type="text" name="contact" class = "form-control" />
                                             <span>Membership No. : </span><input type="text" name="memno" class = "form-control" />
-                                            <span>&nbsp;</span><input class="btn btn-primary btn-block" type="submit" value="Save" class = "form-control" />
+                                            <span>Upload Image:</span> <input type="file" id="image" name="image" class="form-control"> 
+                                            <span>&nbsp;</span><input class="btn btn-primary btn-block" name="insert" id="insert" type="submit" value="Save" class = "form-control" />
                                         </div>
                                     </form>
                                 </div>
@@ -98,6 +99,7 @@ require_once('auth.php');
                 <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                     <thead>
                         <tr>
+                            <th>Image</th>
                             <th width="25%"> First Name </th>
                             <th width="25%"> Middle Name </th>
                             <th width="25%"> Last Name </th>
@@ -116,6 +118,13 @@ require_once('auth.php');
                         for($i=0; $row = $result->fetch(); $i++){
                             ?>
                             <tr class="record">
+                                <?php
+                                echo '
+                                <td>
+                                    <img src="images/customerimage/'.($row['images'] ).'" height="100" width="100"/>
+                                </td>
+                                ';
+                                ?>
                                 <td><?php echo $row['first_name']; ?></td>
                                 <td><?php echo $row['middle_name']; ?></td>
                                 <td><?php echo $row['last_name']; ?></td>

@@ -32,7 +32,7 @@ $finalcode='RS-'.createRandomPassword();
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand" href="#">CURE GROCERY Cashier</a>
+		<a class="navbar-brand" href="#">Kirana Store With GST Cashier</a>
 	</div>
 	<!-- /.navbar-header -->
 

@@ -12,7 +12,7 @@ require_once('auth.php');
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>CURE GROCERY</title>
+	<title>Kirana Store With GST</title>
 	
     <link rel="shortcut icon" href="logo.jpg">
 	<!-- Bootstrap Core CSS -->

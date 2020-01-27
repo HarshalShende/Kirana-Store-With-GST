@@ -1,4 +1,4 @@
-<?php
+s<?php
    $db = new mysqli('localhost', 'root' ,'', 'inventory');
 	if(!$db) {
 	

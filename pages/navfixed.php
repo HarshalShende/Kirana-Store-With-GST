@@ -32,7 +32,7 @@ $finalcode='RS-'.createRandomPassword();
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand" href="home.php">CURE GROCERY</a>
+		<a class="navbar-brand" href="home.php">Kirana Store With GST</a>
 	</div>
 	<!-- /.navbar-header -->
 
@@ -78,13 +78,13 @@ $finalcode='RS-'.createRandomPassword();
 						<a href="customer.php"><i class="fa fa-user fa-fw"></i> Customer</a>
 					</li>
 					<li>
+						<a href="supplier.php"><i class="fa fa-truck fa-fw"></i> Supplier</a>
+					</li>
+					<li>
 						<a href="purchaseslist.php"><i class="fa fa-list-alt fa-fw"></i> Purchase Order List</a>
 					</li>
 					<li>
 						<a href="orderpo.php"><i class="fa fa-list-alt fa-fw"></i> Purchase Order Form</a>
-					</li>
-					<li>
-						<a href="supplier.php"><i class="fa fa-truck fa-fw"></i> Supplier</a>
 					</li>
 
 					<li>

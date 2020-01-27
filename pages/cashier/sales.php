@@ -12,7 +12,7 @@ require_once('auth.php');
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>CURE GROCERY</title>
+  <title>Kirana Store With GST</title>
   
   <link rel="shortcut icon" href="logo.jpg">
   <!-- Bootstrap Core CSS -->
@@ -64,6 +64,7 @@ require_once('auth.php');
             <form action="incoming.php" method="post" class = "form-group" >
               <input type="hidden" name="pt" class = "form-control" value="<?php echo $_GET['id']; ?>" />
               <input type="hidden" name="invoice" class = "form-control" value="<?php echo $_GET['invoice']; ?>" />
+              
               <label>Select a Product</label><br />
               <select  name="product"  style="width:500px;" class="chzn-select">
                 <option></option>

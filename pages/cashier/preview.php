@@ -59,7 +59,7 @@ for($i=0; $row = $result->fetch(); $i++){
 	<div style="margin: 0 auto; padding: 20px; width: 700px; font-weight: normal;">
 		<div style="width: 100%;">
 			<div style="width: 459px;">
-				<p>CURE GROCERY <br />
+				<p>Kirana Store With GST <br />
 					Street Address: Gonzaga-Mabini St. Bacolod City<br />
 					Brgy: 26 <br>
 					Contact No: 495 3324<br>

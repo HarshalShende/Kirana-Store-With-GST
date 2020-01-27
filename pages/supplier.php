@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>CURE GROCERY</title>
+    <title>Kirana Store With GST</title>
     
     <link rel="shortcut icon" href="logoc.jpg">
     <!-- Bootstrap Core CSS -->
@@ -82,13 +82,14 @@
                                     </div>
                                     <div class="modal-body">
 
-                                     <form action="savesupplier.php" method="post" class = "form-group">
+                                     <form action="savesupplier.php" method="post" class = "form-group" enctype="multipart/form-data">
                                         <div id="ac">
-                                            <span>Supplier : </span><input type="text" name="name" class = "form-control" />
+                                            <span>Supplier Agency : </span><input type="text" name="name" class = "form-control" />
                                             <span>Contact Person : </span><input type="text" name="cperson" class = "form-control" />
                                             <span>Address : </span><input type="text" name="address" class = "form-control" />
                                             <span>Contact : </span><input type="text" name="contact" class = "form-control" />
-                                            <span>&nbsp;</span><input class="btn btn-primary btn-block"  type="submit" value="save" class = "form-control" />
+                                            <span>Upload Image:</span> <input type="file" id="image" name="image" class="form-control">
+                                            <span>&nbsp;</span><input class="btn btn-primary btn-block" name="insert" id="insert"  type="submit" value="save" class = "form-control" />
                                         </div>
                                     </form>
                                 </div>
@@ -106,6 +107,7 @@
                 <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                     <thead>
                         <tr>
+                            <th>Image</th>
                             <th> Supplier </th>
                             <th> Contact Person </th>
                             <th> Address </th>
@@ -122,6 +124,13 @@
                         for($i=0; $row = $result->fetch(); $i++){
                             ?>
                             <tr class="record">
+                                <?php
+                                echo '
+                                <td>
+                                    <img src="images/supplierimage/'.($row['images'] ).'" height="100" width="100"/>
+                                </td>
+                                ';
+                                ?>
                                 <td><?php echo $row['suplier_name']; ?></td>
                                 <td><?php echo $row['contact_person']; ?></td>
                                 <td><?php echo $row['suplier_address']; ?></td>

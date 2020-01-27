@@ -19,7 +19,7 @@ $img=$_FILES['image']['name'];
     $insert="INSERT INTO products (product_code,product_name,cost,price,supplier,qty_left,category,date_delivered,expiration_date,description_name,unit,images) VALUES ('$a','$b','$c','$d','$e','$f','$g','$h','$i','$j','$k','$img')";
     if(mysqli_query($connect,$insert))
     {
-        move_uploaded_file($_FILES['image']['tmp_name'],"productsimage/$img");
+        move_uploaded_file($_FILES['image']['tmp_name'],"images/productsimage/$img");
         echo "<script>alert('image is Added')</script>";
 
     }

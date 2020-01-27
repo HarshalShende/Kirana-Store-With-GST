@@ -48,7 +48,7 @@ $amount=$cash-$am;
 <div style="margin: 0 auto; padding: 20px; width: 700px; font-weight: normal;">
 	<div style="width: 100%; height: 190px;" >
 	<div style="width: 459px; float: left;">
-	<p>CURE GROCERY</p>
+	<p>Kirana Store With GST</p>
 	Street Address: Gonzaga-Mabini St. Bacolod City<br>
 	Brgy: 26 <br>
 	Contact No: 495 3324<br>

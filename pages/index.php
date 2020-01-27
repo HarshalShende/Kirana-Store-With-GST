@@ -9,7 +9,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Cure Grocery</title>
+	<title>Kirana Store With GST</title>
 
 
 	<link rel="shortcut icon" href="logoc.jpg">

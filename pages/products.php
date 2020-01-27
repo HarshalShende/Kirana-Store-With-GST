@@ -114,7 +114,7 @@ require_once('auth.php');
                                 <?php
                                 echo '
                                 <td>
-                                    <img src="productsimage/'.($row['images'] ).'" height="100" width="100"/>
+                                    <img src="images/productsimage/'.($row['images'] ).'" height="100" width="100"/>
                                 </td>
                                 ';
                                 ?>
