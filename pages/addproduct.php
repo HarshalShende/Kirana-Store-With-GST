@@ -36,6 +36,7 @@
                             </select>
                             <span>Cost : </span><input type="text" name="cost" class = "form-control" />
                             <span>SRP : </span><input type="text" name="price"  class = "form-control" />
+                            <span>GST Tax :</span><input type="text" name="gst"  class = "form-control" />
                             <span>Supplier : </span>
                             <select name="supplier" class = "form-control">
                                 <?php

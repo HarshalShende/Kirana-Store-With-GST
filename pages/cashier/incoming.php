@@ -10,6 +10,9 @@ $date = date('m/d/Y');
 $month = date('F');
 $year = date('Y');
 
+
+
+
 $discount = $_POST['discount'];
 $result = $db->prepare("SELECT * FROM products WHERE product_code= :userid");
 $result->bindParam(':userid', $b);

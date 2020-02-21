@@ -8,9 +8,11 @@ $a = $_POST['name'];
 $b = $_POST['address'];
 $c = $_POST['contact'];
 $d = $_POST['cperson'];
+$e = $_POST['gstin'];
+$f = $_POST['state'];
 $img=$_FILES['image']['name'];
 
- $insert="INSERT INTO supliers (suplier_name,suplier_address,suplier_contact,contact_person,images) VALUES ('$a','$b','$c','$d','$img')";
+ $insert="INSERT INTO supliers (suplier_name,suplier_address,suplier_contact,contact_person,images,gstin,states) VALUES ('$a','$b','$c','$d','$img','$e','$f')";
  // 
     if(mysqli_query($connect,$insert))
     {

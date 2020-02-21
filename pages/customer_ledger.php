@@ -117,10 +117,12 @@ require_once('auth.php');
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
                                     <td>&nbsp;</td>
-                                     <td align="right"><?php
-                                            $r=$amount;
-                                            echo '<font style = color:red;>Php'.''.formatMoney($r, true).'</font>';
-                                            ?></td>
+                                     <td align="right">
+                                         <?php 
+                                         $r=$amount;
+                                         echo '<font style = color:red;>Php'.''.formatMoney($r, true).'</font>';
+                                        ?>
+                                     </td>
                                 </tr>
                                 <?php
                                 $tftft=$_GET['cname'];

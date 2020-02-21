@@ -81,6 +81,7 @@ require_once('auth.php');
                                 <th> Category </th>
                                 <th> Cost </th>
                                 <th> SRP </th>
+                                <th> GST </th>
                                 <th> Supplier </th>
                                 <th witdh = "10%"> Quantity Left </th>
                                 <th witdh = "10%"> Product Unit </th>
@@ -114,7 +115,7 @@ require_once('auth.php');
                                 <?php
                                 echo '
                                 <td>
-                                    <img src="images/productsimage/'.($row['images'] ).'" height="100" width="100"/>
+                                    <img src="images/productsimage/'.($row['images'] ).'" height="55" width="55"/>
                                 </td>
                                 ';
                                 ?>
@@ -122,16 +123,17 @@ require_once('auth.php');
                                 <td><?php echo $row['product_name']; ?></td>
                                 <td><?php echo $row['description_name']; ?></td>
                                 <td><?php echo $row['category']; ?></td>
-                                <td align="right"><?php
+                                <td><?php
                                     $pcost=$row['cost'];
                                     echo formatMoney($pcost, true);
                                 ?></td>
-                                <td align="right"><?php
+                                <td><?php
                                     $pprice=$row['price'];
                                     echo formatMoney($pprice, true);
                                 ?></td>
+                                <td><?php echo $row['gst']; ?></td>
                                 <td><?php echo $row['supplier']; ?></td>
-                                <td align="right"><?php echo $row['qty_left']; ?></td>
+                                <td><?php echo $row['qty_left']; ?></td>
                                 
                                 <td ><?php echo $row['unit']; ?></td>
                                 

@@ -61,12 +61,12 @@ require_once('auth.php');
 
             <div id="maintable"><div style="margin-top: -19px; margin-bottom: 21px;">
             </div>
-            <form action="incoming.php" method="post" class = "form-group" >
-              <input type="hidden" name="pt" class = "form-control" value="<?php echo $_GET['id']; ?>" />
-              <input type="hidden" name="invoice" class = "form-control" value="<?php echo $_GET['invoice']; ?>" />
+            <form action="salesincoming.php" method="post" class = "form-group" >
+              <input type="text" name="pt" class = "form-control" value="<?php echo $_GET['id']; ?>" />
+              <input type="text" name="invoice" class = "form-control" value="<?php echo $_GET['invoice']; ?>" />
               
               <label>Select a Product</label><br />
-              <select  name="product"  style="width:500px;" class="chzn-select">
+              <select  name="product_id"  style="width:500px;" class="chzn-select">
                 <option></option>
                 <?php
                 include('connect.php');
@@ -94,12 +94,14 @@ require_once('auth.php');
                 ?>
               </select>
               <br />
+              <div style="" class="justify-content-center">
               <label>Number of Item</label>
               <input type="number" name="qty" value="1" min = "1" class = "form-control"  autocomplete="off" style="width: 100px; padding-top: 6px; padding-bottom: 6px; margin-right: 4px;" />
               <label>Discount</label>
               <input type="text" name="discount" value="0" class = "form-control"  autocomplete="off" style="width: 100px; padding-top: 6px; padding-bottom: 6px; margin-right: 4px;" />
-              <label>Value Add Tax:</label>
-              <input type="text" name="vat" value=".12" class = "form-control"  autocomplete="off" style="width: 100px; padding-top: 6px; padding-bottom: 6px; margin-right: 4px;" />
+              <!-- <label>Value Add Tax:</label>
+              <input type="text" name="vat" value="" class = "form-control"  autocomplete="off" style="width: 100px; padding-top: 6px; padding-bottom: 6px; margin-right: 4px;" />
+              </div> -->
               <br>
               <input type="submit" class="btn btn-primary" value="add product" class = "form-control" style="width: 123px;" />
             </form>
@@ -113,7 +115,7 @@ require_once('auth.php');
                   <th> Quantity </th>
                   <th> Price </th>
                   <th> Discount </th>
-                  <th> VAT </th>
+                  <th> GST </th>
                   <th> Amount </th>
                   <th> Total Amount </th>
                   <th> Delete </th>
@@ -144,12 +146,13 @@ require_once('auth.php');
                     <td>
                       <?php
                       $ddd=$row['discount'];
-                      echo formatMoney($ddd, true);
+                      echo $ddd.'%';
+                      //echo formatMoney($ddd, true);
                       ?>
                     </td>
                     <td>
                       <?php
-                      $fff=$row['vat'];
+                      $fff=$row['gst'];
                       echo formatMoney($fff, true);
                       ?>
                     </td>

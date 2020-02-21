@@ -59,11 +59,17 @@ for($i=0; $row = $result->fetch(); $i++){
 	<div style="margin: 0 auto; padding: 20px; width: 700px; font-weight: normal;">
 		<div style="width: 100%;">
 			<div style="width: 459px;">
-				<p>Kirana Store With GST <br />
-					Street Address: Gonzaga-Mabini St. Bacolod City<br />
-					Brgy: 26 <br>
-					Contact No: 495 3324<br>
-					Email Add : cure@gmail.com<br></p>
+				<table border="1" cellpadding="4" cellspacing="0" style="font-family: arial; font-size: 15px;text-align:left;width : 100%;">
+					<tr height="60em" style="font-weight: bold;"><td>Store Name:</td><td colspan="2">Kirana Store With GST </td></tr>
+
+					<tr><td>Street Address:</td><td colspan="2"> Gonzaga-Mabini St. Bacolod City</td></tr>
+
+					<tr><td>Brgy:</td> <td colspan="2">26 </td></tr>
+
+					<tr><td>Contact No: </td><td colspan="2"">495 3324</td></tr>
+
+					<tr><td>Email Add :</td><td colspan="2"> kiranastore@gmail.com</td></tr>
+				</table>
 					<div>
 						<?php
 						$resulta = $db->prepare("SELECT * FROM customer WHERE customer_name= :a");
@@ -96,8 +102,8 @@ for($i=0; $row = $result->fetch(); $i++){
 					<thead>
 						<tr>
 							<th> Product Code </th>
-							<th> Brand Name </th>
-							<th> Description Name </th>
+							<th> Brand</th>
+							<th> Description</th>
 							<th> Qty </th>
 							<th> Price </th>
 							<th> Discount </th>
@@ -142,32 +148,34 @@ for($i=0; $row = $result->fetch(); $i++){
 						?>
 
 						<tr>
-							<td colspan="6"><strong style="font-size: 12px; color: #222222;">Amount:</strong></td>
+							<td colspan="6"><strong style="font-size: 12px; color: #222222;">Total Amount:</strong></td>
 							<td colspan="2"><strong style="font-size: 12px; color: #222222;">
 								<?php
 								$sdsd=$_GET['invoice'];
-								$resultas = $db->prepare("SELECT * FROM sales_order WHERE invoice= :a");
+								$resultas = $db->prepare("SELECT sum(total_amount) FROM sales_order WHERE invoice= :a");
 								$resultas->bindParam(':a', $sdsd);
 								$resultas->execute();
+								
 								for($i=0; $rowas = $resultas->fetch(); $i++){
-									$fgfg=$rowas['amount'];
-									echo formatMoney($fgfg, true);
-								}
+										$fgfg=$rowas['sum(total_amount)'];
+										echo formatMoney($fgfg, true);
+									}
 								?>
 							</strong></td>
 						</tr>
 						<tr>
-							<td colspan="6"><strong style="font-size: 12px; color: #222222;">VAT:</strong></td>
+							<td colspan="6"><strong style="font-size: 12px; color: #222222;">GST:</strong></td>
 							<td colspan="2"><strong style="font-size: 12px; color: #222222;">
 								<?php
 								$sdsd=$_GET['invoice'];
-								$resultas = $db->prepare("SELECT * FROM sales_order WHERE invoice= :a");
+								$resultas = $db->prepare("SELECT sum(gst) FROM sales_order WHERE invoice= :a");
 								$resultas->bindParam(':a', $sdsd);
 								$resultas->execute();
+								
 								for($i=0; $rowas = $resultas->fetch(); $i++){
-									$fgfg=$rowas['vat'];
-									echo formatMoney($fgfg, true);
-								}
+										$fgfg=$rowas['sum(gst)'];
+										echo formatMoney($fgfg, true);
+									}
 								?>
 							</strong></td>
 						</tr>
@@ -181,25 +189,25 @@ for($i=0; $row = $result->fetch(); $i++){
 									?>
 								</strong></td>
 							</tr>
-						
+							<?php
+						}
+						?>
 							<tr>
-								<td colspan="6"><strong style="font-size: 12px; color: #222222;">Total Amount:</strong></td>
+								<td colspan="6"><strong style="font-size: 12px; color: #222222;">Total Amount (Including GST):</strong></td>
 								<td colspan="2"><strong style="font-size: 12px; color: #222222;">
 									<?php
 									$sdsd=$_GET['invoice'];
-									$resultas = $db->prepare("SELECT sum(total_amount) FROM sales_order WHERE invoice= :a");
+									$resultas = $db->prepare("SELECT sum(total_amount),sum(gst) FROM sales_order WHERE invoice= :a");
 									$resultas->bindParam(':a', $sdsd);
 									$resultas->execute();
 									for($i=0; $rowas = $resultas->fetch(); $i++){
-										$fgfg=$rowas['sum(total_amount)'];
+										$fgfg=$rowas['sum(total_amount)']+$rowas['sum(gst)'];
 										echo formatMoney($fgfg, true);
 									}
 									?>
 								</strong></td>
 							</tr>
-								<?php
-						}
-						?>
+							
 						<tr>
 							<td colspan="6"><strong style="font-size: 12px; color: #222222;">
 								<?php
@@ -232,8 +240,18 @@ for($i=0; $row = $result->fetch(); $i++){
 									echo $cash;
 								}
 								if($pt=='cash'){
-									echo formatMoney($amount, true);
+									//echo formatMoney($amount, true);
+								//}
+									$sdsd=$_GET['invoice'];
+									$resultas = $db->prepare("SELECT sum(total_amount),sum(gst) FROM sales_order WHERE invoice= :a");
+									$resultas->bindParam(':a', $sdsd);
+									$resultas->execute();
+									for($i=0; $rowas = $resultas->fetch(); $i++){
+										$fgfg=$cash-($rowas['sum(total_amount)']+$rowas['sum(gst)']);
+										echo formatMoney($fgfg, true);
+									}
 								}
+
 								?>
 							</strong></td>
 						</tr>
