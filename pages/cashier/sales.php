@@ -62,8 +62,8 @@ require_once('auth.php');
             <div id="maintable"><div style="margin-top: -19px; margin-bottom: 21px;">
             </div>
             <form action="salesincoming.php" method="post" class = "form-group" >
-              <input type="text" name="pt" class = "form-control" value="<?php echo $_GET['id']; ?>" />
-              <input type="text" name="invoice" class = "form-control" value="<?php echo $_GET['invoice']; ?>" />
+              <input type="hidden" name="pt" class = "form-control" value="<?php echo $_GET['id']; ?>" />
+              <input type="hidden" name="invoice" class = "form-control" value="<?php echo $_GET['invoice']; ?>" />
               
               <label>Select a Product</label><br />
               <select  name="product_id"  style="width:500px;" class="chzn-select">
@@ -83,8 +83,8 @@ require_once('auth.php');
                     }
                     ?>
                     >
-                    <?php echo $row['product_code']; ?>
-                    - <?php echo $row['product_name']; ?>
+                    <!-- <?php echo $row['product_code']; ?> -->
+                    <?php echo $row['product_name']; ?>
                     - <?php echo $row['description_name']; ?>
                     - <?php echo $row['qty_left']; ?>
 
@@ -140,7 +140,7 @@ require_once('auth.php');
                     <td>
                       <?php
                       $ppp=$row['price'];
-                      echo formatMoney($ppp, true);
+                      echo formatMoney($ppp, true)." ₹";
                       ?>
                     </td>
                     <td>
@@ -153,20 +153,20 @@ require_once('auth.php');
                     <td>
                       <?php
                       $fff=$row['gst'];
-                      echo formatMoney($fff, true);
+                      echo formatMoney($fff, true)." ₹";
                       ?>
                     </td>
                     <td>
                       <?php
                       $ccc=$row['amount'];
-                      echo formatMoney($ccc, true);
+                      echo formatMoney($ccc, true)." ₹";
                       ?>
                     </td>
 
                     <td>
                       <?php
                       $dfdf=$row['total_amount'];
-                      echo formatMoney($dfdf, true);
+                      echo formatMoney($dfdf, true)." ₹";
                       ?>
                     </td>
                     

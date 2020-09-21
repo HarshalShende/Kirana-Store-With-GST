@@ -144,7 +144,7 @@ require_once('auth.php');
 						?>
 
 						<?php echo "<font style = 'color:black;'>Total Sales For Today:  </font>";
-						echo "<font style = 'color:red;'>Php" . formatMoney($data, true) . "</font>" . " ";
+						echo "<font  style = 'color:red; float:right; font-size:1.5em; font-weight:bold;'>" . formatMoney($data, true) . " ₹</font>" . " ";
 						echo  $today;  ?> 
 
 					</a>

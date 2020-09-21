@@ -71,7 +71,7 @@ require_once('auth.php');
                     <a  href = "#addcat" data-toggle = "modal" class="btn btn-primary">Add Category</a>
                     <?php include 'addproduct.php'; ?>
                     <?php include 'addcategory.php'; ?>
-                    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                    <table width="100%" class="table table-striped table-bordered table-hover " id="dataTables-example">
                         <thead>
                             <tr>
                                 <th> Code </th>
@@ -83,10 +83,9 @@ require_once('auth.php');
                                 <th> SRP </th>
                                 <th> GST </th>
                                 <th> Supplier </th>
-                                <th witdh = "10%"> Quantity Left </th>
-                                <th witdh = "10%"> Product Unit </th>
+                                <th > Quantity Left </th>
+                                <th > Product Unit </th>
                                 <th> Action </th>
-                                
                             </tr>
                         </thead>
                         <tbody>
@@ -115,7 +114,7 @@ require_once('auth.php');
                                 <?php
                                 echo '
                                 <td>
-                                    <img src="images/productsimage/'.($row['images'] ).'" height="55" width="55"/>
+                                    <img src="images/productsimage/'.($row['images'] ).'" height="70px" width="70px"/>
                                 </td>
                                 ';
                                 ?>
@@ -125,11 +124,11 @@ require_once('auth.php');
                                 <td><?php echo $row['category']; ?></td>
                                 <td><?php
                                     $pcost=$row['cost'];
-                                    echo formatMoney($pcost, true);
+                                    echo formatMoney($pcost, true)." ₹";
                                 ?></td>
                                 <td><?php
                                     $pprice=$row['price'];
-                                    echo formatMoney($pprice, true);
+                                    echo formatMoney($pprice, true)." ₹";
                                 ?></td>
                                 <td><?php echo $row['gst']; ?></td>
                                 <td><?php echo $row['supplier']; ?></td>

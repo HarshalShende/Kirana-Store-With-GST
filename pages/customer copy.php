@@ -66,7 +66,7 @@ require_once('auth.php');
 <body>
 
 
-    <?php include('navfixed.php');?>    
+    <?php include('navfixed copy.php');?>    
 
     <!-- Page Content -->
     <div id="page-wrapper">
@@ -84,6 +84,9 @@ require_once('auth.php');
                     <button class="btn btn-primary" data-toggle="modal" data-target="#addc">
                         Add Customer
                     </button>
+                    <a class="btn btn-primary" href="../pages/cashier/sales.php?id=cash&invoice=RS-202">
+                        Back To sales
+                    </a>
                     <!-- Modal -->
                     <div class="modal fade" id="addc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -93,7 +96,7 @@ require_once('auth.php');
                                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="savecustomer.php" method="post" enctype="multipart/form-data" class= "form-group">
+                                    <form action="savecustomer copy.php" method="post" enctype="multipart/form-data" class= "form-group">
                                         <div id="ac">
                                             <span>First Name : </span><input type="text" required="required" name="fname" class = "form-control" />
                                             <span>Middle Name : </span><input type="text" required="required" name="mname" class = "form-control" />

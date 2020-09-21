@@ -12,7 +12,7 @@
                         <div id="acat">
                        
                             <span>Enter Category Name: </span>
-                            <input type="text" name="catname" value = "" class = "form-control" />
+                            <input type="text" name="catname" required="required" value = "" class = "form-control" />
 
                             <span>&nbsp;</span><input class="btn btn-primary btn-block" type="submit" class = "form-control" value="Save" />
                         </div>

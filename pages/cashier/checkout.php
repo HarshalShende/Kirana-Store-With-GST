@@ -88,12 +88,12 @@ background-repeat:no-repeat;
 <body onLoad="document.getElementById('country').focus();">
 <form action="savesales.php" method="post">
 <div id="ac">
-<input type="text" name="date" value="<?php echo date("m/d/Y"); ?>" />
-<input type="text" name="invoice" value="<?php echo $_GET['invoice']; ?>" />
-<input type="text" name="amount" value="<?php echo $_GET['total']; ?>" />
-<input type="text" name="ptype" value="<?php echo $_GET['pt']; ?>" />
-<input type="text" name="cashier" value="<?php echo $_GET['cashier']; ?>" />
-<input type="text" name="p_amount" value="<?php echo $_GET['p_amount']; ?>" />
+<input type="hidden" name="invoice" value="<?php echo $_GET['invoice']; ?>" />
+<input type="hidden" name="date" value="<?php echo date("m/d/Y"); ?>" />
+<input type="hidden" name="amount" value="<?php echo $_GET['total']; ?>" />
+<input type="hidden" name="ptype" value="<?php echo $_GET['pt']; ?>" />
+<input type="hidden" name="cashier" value="<?php echo $_GET['cashier']; ?>" />
+<input type="hidden" name="p_amount" value="<?php echo $_GET['p_amount']; ?>" />
 <input type="text" size="25" value="" name="cname" id="country" onkeyup="suggest(this.value);" onblur="fill();" class="" autocomplete="off" placeholder="Enter Customer Name" style="width: 268px;" /><br><br>
      
       <div class="suggestionsBox" id="suggestions" style="display: none;">

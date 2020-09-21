@@ -42,12 +42,18 @@
 	?>
 </select>
 <span>Category: </span>
-<select name="categ" class = "form-control" >
-                            <option>Select Category</option>
-                            <option>Noodles</option>
-                            <option>Canned Goods</option>
-                            <option>Shampoo</option>
-                            <option>Bath Soap</option>
+<select name="categ" class = "form-control" required="required" >
+                            <?php
+                                include('connect.php');
+                                $result = $db->prepare("SELECT * FROM categories");
+                                $result->bindParam(':userid', $res);
+                                $result->execute();
+                                for($i=0; $row = $result->fetch(); $i++){
+                                    ?>
+                                    <option><?php echo $row['cat_name']; ?></option>
+                                    <?php
+                                }
+                                ?>
                             </select>
 <span>&nbsp;</span><input class="btn btn-primary btn-block" type="submit" class = "form-control" value="Update" />
 </div>

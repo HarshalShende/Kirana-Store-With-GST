@@ -94,8 +94,8 @@
                                                     class="form-control" />
                                                 <span>Contact : </span><input type="text" name="contact"
                                                     class="form-control" />
-                                                <span>GSTIN Number:<small>&nbsp;&nbsp;e.g. 36ARVPS3698F1ZF</small></span>
-                                                <input type="text" name="gstin" class="form-control" placeholder=""/>
+                                                <!-- <span>GSTIN Number:<small>&nbsp;&nbsp;e.g. 36ARVPS3698F1ZF</small></span> -->
+                                                <input type="hidden" name="gstin" class="form-control" placeholder="" value="36ARVPS3698F1ZF"/>
                                                 <span>State:</span>
                                                 <select name="state" class="form-control">
                                                     <option value="">------------Select State------------</option>
@@ -163,7 +163,7 @@
                                 <th> Contact Person </th>
                                 <th> Address </th>
                                 <th> Contact </th>
-                                <th> GSTIN </th>
+                                <!-- <th> GSTIN </th> -->
                                 <th> State </th>
                                 <th width="10%"> Action </th>
                             </tr>
@@ -188,7 +188,7 @@
                                 <td><?php echo $row['contact_person']; ?></td>
                                 <td><?php echo $row['suplier_address']; ?></td>
                                 <td ><?php echo $row['suplier_contact']; ?></td>
-                                <td ><?php echo $row['gstin']; ?></td>
+                                
                                 <td><?php echo $row['states']; ?></td>
                                 <td><a rel="facebox" class="btn btn-primary"
                                         href="editsupplier.php?id=<?php echo $row['suplier_id']; ?>"> <i
@@ -198,7 +198,9 @@
                             </tr>
                             <?php
                         }
-                        ?>
+                        ?> 
+                        <!-- plaste it in above empty line  -->
+                        <!-- <td ><?php echo $row['gstin']; ?></td> -->
 
                         </tbody>
                     </table>

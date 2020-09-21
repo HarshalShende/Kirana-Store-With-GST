@@ -120,7 +120,7 @@ require_once('auth.php');
                                      <td align="right">
                                          <?php 
                                          $r=$amount;
-                                         echo '<font style = color:red;>Php'.''.formatMoney($r, true).'</font>';
+                                         echo '<font style = color:red;>'.''.formatMoney($r, true).'</font>';
                                         ?>
                                      </td>
                                 </tr>

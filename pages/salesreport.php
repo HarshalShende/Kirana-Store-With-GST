@@ -114,9 +114,9 @@ require_once('auth.php');
                                             <span><i class="fa fa-trash"></i></span>
                                         </a>
                                         &nbsp;
-                                        <a class="btn btn-primary" href="salesprint.php?id=<?php echo $row['invoice_number']; ?>">
-                                            <span><i class="fa fa-print"></i></span>
-                                        </a>
+                                            <!-- <a class="btn btn-primary" href="salesprint.php?id=<?php echo $row['invoice_number']; ?>">
+                                                <span><i class="fa fa-print"></i></span>
+                                            </a> -->
                                     </td>
                                 </tr>
                                 <?php

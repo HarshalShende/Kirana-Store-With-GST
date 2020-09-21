@@ -16,13 +16,15 @@
 <!-- Custom Fonts -->
 <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+
+
 <form action="savecustomer.php" method="post" enctype="multipart/form-data" class = "form-group">
 	<div id="ac">
-		<span>Name : </span><input type="text" name="name" class = "form-control" />
-		<span>Address : </span><input type="text" name="address" class = "form-control" />
-		<span>Contact : </span><input type="text" name="contact" class = "form-control" />
-		<span>Membership No. : </span><input type="text" name="memno" class = "form-control" />
-		<span>Upload Image:</span> <input type="file" id="image" name="image" class="form-control"> 
+		<span>Name : </span><input type="text" name="name" class = "form-control" required="required" />
+		<span>Address : </span><input type="text" name="address" class = "form-control" required="required" />
+		<span>Contact : </span><input type="text" name="contact" class = "form-control" required="required" />
+		<!-- <span>Membership No. : </span><input type="text" name="memno" class = "form-control" required="required" value = "<?php echo $pcode ?>" /> -->
+		<span>Upload Image:</span> <input type="file" id="image" name="image" class="form-control" required="required" /> 
 		<span>&nbsp;</span><input class="btn btn-primary btn-block" name="submit" id="submit" type="submit" value="save" class = "form-control" />
 	</div>
 </form>

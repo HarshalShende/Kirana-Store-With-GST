@@ -64,10 +64,11 @@
 
     	<div class="container">
     		<div class="row">
-    			<div class="col-md-4 col-md-offset-4">
+    			<div class="col-md-6 col-md-offset-3">
     				<div class="login-panel panel panel-default">
     					<div class="panel-heading">
-    						<h3 class="panel-title"><b>CURE GROCERY </b></h3>
+							<h2 class="panel-title text-center" style="color:blue; font-size:40px;"><b> Kirana Store With GST </b></h2><br>
+							<h3 class="panel-title text-center"><b> Login </b></h3>
     					</div>
     					<ul class="nav nav-pills">
     						<li class="active"><a data-toggle="pill" href="#home">Admin</a></li>
@@ -184,7 +185,9 @@
     							$('#alert-msg1').html('<div class="alert alert-danger">Incorrect username or password!</div>');
     						}else{
     							$("#btn").html('<img src="loading.gif" /> &nbsp; Signing In ...');
-    							setTimeout(' window.location.href = "cashier/sales.php?id=cash&invoice=<?php echo $finalcode ?>"; ',2000);
+    							// setTimeout(' window.location.href = "cashier/sales.php?id=cash&invoice=<?php echo $finalcode ?>"; ',2000);
+								setTimeout(' window.location.href = "cashier/home.php"; ',2000);
+
     						}
     					});
     				}

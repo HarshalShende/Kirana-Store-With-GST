@@ -135,7 +135,7 @@ require_once('auth.php');
                             <td align="right"><?php echo $row['expiration_date']; ?></td>
                             <td align="right"><?php echo $row['qty_left']; ?></td>
                             <td><a rel="facebox" class = "btn btn-primary" href="product_pullout.php?id=<?php echo $row['product_id']; ?>">
-                                <i class="fa fa-trash-o"></i>Pull Out  
+                                <i class="fa fa-trash-o"></i> Remove Products<br>Some Or All  
                             </a>  </td>
                         </tr>
                         <?php

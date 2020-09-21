@@ -58,6 +58,9 @@ $finalcode='RS-'.createRandomPassword();
 					</li>
 				</ul>
 			</li>
+			<li>
+				<a href="../customer copy.php"><i class="fa fa-user fa-fw"></i> Add New Customer</a>
+			</li>
 		</div>
 	</div>
 	<!-- /.navbar-static-side -->

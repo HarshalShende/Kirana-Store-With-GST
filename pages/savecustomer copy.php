@@ -31,5 +31,5 @@ $img=$_FILES['image']['name'];
 // $sql = "INSERT INTO customer (first_name,address,contact,membership_number,last_name,middle_name,customer_name) VALUES (:a,:b,:c,:d,:e,:f,:h)";
 // $q = $db->prepare($sql);
 // $q->execute(array(':a'=>$a,':b'=>$b,':c'=>$c,':d'=>$d,':e'=>$f,':f'=>$e,':h'=>$a.' '.$e.' '.$f ));
-header("location: customer.php");
+header("location: customer copy.php");
 ?>
